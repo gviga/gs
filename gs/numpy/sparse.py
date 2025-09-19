@@ -1,5 +1,9 @@
-import scipy as _scipy
-import torch as _torch
+try:
+    import torch as _torch
+except ImportError:
+    pass
+
+from ._dispatch import scipy as _scipy
 
 
 def to_dense(array):
